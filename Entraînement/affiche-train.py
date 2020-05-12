@@ -4,7 +4,7 @@
 #-=-=-=-=-=-=-=-=-=-=-#
 
 import numpy as np
-from PIL import Image as img
+from PIL import Image
 from glob import glob
 from tqdm import tqdm
 from keras.utils import to_categorical
@@ -44,7 +44,7 @@ for img in tqdm(imageslvl):
 	else :
 		#print("no god pls no, NOOOO")
 		mes_labels.append(0)
-	poster=img.open(img)
+	poster=Image.open(img)
 	poster=poster.convert("RGB")
 	poster=np.array(poster)
 	poster=poster.astype("float32")
